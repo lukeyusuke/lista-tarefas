@@ -38,6 +38,7 @@
 
 .tasks-todo .task-item{
     border: 1px solid #0CA364;
+    border-radius: .25rem;
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -45,7 +46,18 @@
     padding: 1rem;
 }
 
+.icons-box .fa-trash-can, .fa-check{
+    background-color: #d41021;
+    border-radius: .25rem;
+    padding: 10px;
+    color: white;
+}
+
+.icons-box .fa-check{
+    background-color: #0CA364;
+}
 
 .task-container .task-input:focus{
-    border-color: #0CA364;
+    border: 1px solid #0CA364;
+    box-shadow: 3px 3px 10px #0CA364;
 }

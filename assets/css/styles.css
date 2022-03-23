@@ -26,6 +26,14 @@
     width: 350px;
 }
 
+.error{
+    border: 1px solid #D41021;
+}
+
+.error::placeholder{
+    color: red;
+}
+
 .task-container .task-button{
     padding-left: 0;
     width: 150px;

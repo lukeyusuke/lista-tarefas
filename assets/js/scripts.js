@@ -2,7 +2,18 @@ const taskInput = document.querySelector('.task-input');
 const taskButton = document.querySelector('.task-button');
 const listTasks = document.querySelector('.tasks-todo');
 
+const validateInput = () => taskInput.value.trim().length > 0;
+
 const addTask = () => {
+
+    const inputIsValid = validateInput();
+
+    if(!inputIsValid){
+        return taskInput.classList.add("error");
+    };
+
+    const taskContent = document.createElement('div');
+    taskContent.classList.add('task-content');
 
     const addTaskItem = document.createElement('div');
     addTaskItem.classList.add('task-item');
@@ -21,11 +32,22 @@ const addTask = () => {
     deleteItem.classList.add('fa-solid');
     deleteItem.classList.add('fa-trash-can');
 
-    listTasks.appendChild(addTaskItem);
+    listTasks.append(taskContent);
+    taskContent.appendChild(addTaskItem);
     addTaskItem.appendChild(addParagraph);
-    listTasks.appendChild(addIconsBox);
+    taskContent.appendChild(addIconsBox);
     addIconsBox.appendChild(doItem);
     addIconsBox.appendChild(deleteItem);
-}
+};
+
+const inputColorChange = () => {
+    const inputIsValid = validateInput();
+
+    if(inputIsValid){
+        return taskInput.classList.remove("error");
+    }
+};
 
 taskButton.addEventListener('click', () => addTask());
+taskInput.addEventListener('change', () => inputColorChange());
+

@@ -5,6 +5,11 @@
     font-family: 'Nunito', sans-serif;
 }
 
+:root{
+    --light-green: #0CA364;
+    --danger-red: #D41021;
+}
+
 .main-title{
     text-align: center;
     margin: 4rem 0 2rem 0;
@@ -27,11 +32,11 @@
 }
 
 .error{
-    border: 1px solid #D41021;
+    border: 1px solid var(--danger-red);
 }
 
 .error::placeholder{
-    color: red;
+    color: var(--danger-red);
 }
 
 .task-container .task-button{
@@ -39,13 +44,25 @@
     width: 150px;
 }
 
+.task-button{
+    background-color: var(--light-green);
+    border: 0;
+    cursor: pointer;
+    border-radius: .25em;
+    color: #FFF;
+}
+
+.task-button:hover{
+    background-color: #169460;
+}
+
 .tasks-todo{
     width: 65%;
     margin: 0 auto;
 }
 
-.tasks-todo .task-item{
-    border: 1px solid #0CA364;
+.tasks-todo .task-content{
+    border: 1px solid var(--light-green);
     border-radius: .25rem;
     align-items: center;
     display: flex;
@@ -55,17 +72,19 @@
 }
 
 .icons-box .fa-trash-can, .fa-check{
-    background-color: #d41021;
+    background-color: var(--danger-red);
     border-radius: .25rem;
-    padding: 10px;
     color: white;
+    cursor: pointer;
+    padding: 10px;
 }
 
 .icons-box .fa-check{
-    background-color: #0CA364;
+    background-color: var(--light-green);
+    margin-right: 10px;
 }
 
 .task-container .task-input:focus{
-    border: 1px solid #0CA364;
-    box-shadow: 3px 3px 10px #0CA364;
+    border: 1px solid var(--light-green);
+    box-shadow: 3px 3px 10px var(--light-green);
 }

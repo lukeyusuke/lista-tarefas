@@ -28,16 +28,22 @@ const addTask = () => {
     doItem.classList.add('fa-solid');
     doItem.classList.add('fa-check');
 
+    addParagraph.addEventListener('click', () => taskDone(addParagraph));
+
     const deleteItem = document.createElement('i');
     deleteItem.classList.add('fa-solid');
     deleteItem.classList.add('fa-trash-can');
 
-    listTasks.append(taskContent);
+    deleteItem.addEventListener('click', () => deleteTask());
+
+    listTasks.appendChild(taskContent);
     taskContent.appendChild(addTaskItem);
     addTaskItem.appendChild(addParagraph);
     taskContent.appendChild(addIconsBox);
     addIconsBox.appendChild(doItem);
     addIconsBox.appendChild(deleteItem);
+
+    taskInput.value = "";
 };
 
 const inputColorChange = () => {

@@ -32,7 +32,7 @@ const addTask = () => {
     deleteItem.classList.add('fa-solid');
     deleteItem.classList.add('fa-trash-can');
 
-    deleteItem.addEventListener('click', () => DeleteTask(taskItem, taskParagraph));
+    deleteItem.addEventListener('click', () => deleteTask(taskContent, taskParagraph));
 
     listTasks.appendChild(taskContent);
     taskContent.appendChild(taskItem);
@@ -44,16 +44,17 @@ const addTask = () => {
     taskInput.value = "";
 };
 
-const DeleteTask = (taskItem, taskParagraph) => {
+const deleteTask = (taskContent, taskParagraph) => {
     const tasks = taskContent.childNodes;
+    console.log(tasks);
 
     for(const task of tasks){
         const currentTaskIsBeingClicked = task.firstChild.isSameNode(taskParagraph);
 
         if(currentTaskIsBeingClicked){
-            taskItem.remove();
-        };
-    };
+            taskContent.remove();
+        }
+    }
 };
 
 const inputColorChange = () => {

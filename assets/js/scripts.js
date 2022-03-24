@@ -15,11 +15,11 @@ const addTask = () => {
     const taskContent = document.createElement('div');
     taskContent.classList.add('task-content');
 
-    const addTaskItem = document.createElement('div');
-    addTaskItem.classList.add('task-item');
+    const taskItem = document.createElement('div');
+    taskItem.classList.add('task-item');
 
-    const addParagraph = document.createElement('p');
-    addParagraph.innerText = taskInput.value;
+    const taskParagraph = document.createElement('p');
+    taskParagraph.innerText = taskInput.value;
 
     const addIconsBox = document.createElement('div');
     addIconsBox.classList.add('icons-box');
@@ -28,22 +28,32 @@ const addTask = () => {
     doItem.classList.add('fa-solid');
     doItem.classList.add('fa-check');
 
-    addParagraph.addEventListener('click', () => taskDone(addParagraph));
-
     const deleteItem = document.createElement('i');
     deleteItem.classList.add('fa-solid');
     deleteItem.classList.add('fa-trash-can');
 
-    deleteItem.addEventListener('click', () => deleteTask());
+    deleteItem.addEventListener('click', () => DeleteTask(taskItem, taskParagraph));
 
     listTasks.appendChild(taskContent);
-    taskContent.appendChild(addTaskItem);
-    addTaskItem.appendChild(addParagraph);
+    taskContent.appendChild(taskItem);
+    taskItem.appendChild(taskParagraph);
     taskContent.appendChild(addIconsBox);
     addIconsBox.appendChild(doItem);
     addIconsBox.appendChild(deleteItem);
 
     taskInput.value = "";
+};
+
+const DeleteTask = (taskItem, taskParagraph) => {
+    const tasks = taskContent.childNodes;
+
+    for(const task of tasks){
+        const currentTaskIsBeingClicked = task.firstChild.isSameNode(taskParagraph);
+
+        if(currentTaskIsBeingClicked){
+            taskItem.remove();
+        };
+    };
 };
 
 const inputColorChange = () => {

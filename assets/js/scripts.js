@@ -28,6 +28,8 @@ const addTask = () => {
     doItem.classList.add('fa-solid');
     doItem.classList.add('fa-check');
 
+    doItem.addEventListener('click', () => taskDone(taskContent, taskParagraph));
+
     const deleteItem = document.createElement('i');
     deleteItem.classList.add('fa-solid');
     deleteItem.classList.add('fa-trash-can');
@@ -46,7 +48,6 @@ const addTask = () => {
 
 const deleteTask = (taskContent, taskParagraph) => {
     const tasks = taskContent.childNodes;
-    console.log(tasks);
 
     for(const task of tasks){
         const currentTaskIsBeingClicked = task.firstChild.isSameNode(taskParagraph);
@@ -56,6 +57,19 @@ const deleteTask = (taskContent, taskParagraph) => {
         }
     }
 };
+
+const taskDone = (taskContent, taskParagraph) => {
+    const tasks = taskContent.childNodes;
+    
+    for(const task of tasks){
+        const currentTaskIsBeingClicked = task.firstChild.isSameNode(taskParagraph);
+        console.log(true);
+
+        if(currentTaskIsBeingClicked){
+            task.firstChild.classList.toggle("completed");
+        }
+    };
+}
 
 const inputColorChange = () => {
     const inputIsValid = validateInput();

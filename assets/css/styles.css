@@ -88,3 +88,8 @@
     border: 1px solid var(--light-green);
     box-shadow: 3px 3px 10px var(--light-green);
 }
+
+.completed{
+    color: rgba(0,0,0,0.2);
+    text-decoration: line-through;
+}

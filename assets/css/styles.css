@@ -8,15 +8,13 @@
 :root{
     --light-green: #0CA364;
     --danger-red: #D41021;
+    --bg-white: #FFF; 
+    --border-style: .25rem;
 }
 
 .main-title{
     text-align: center;
     margin: 4rem 0 2rem 0;
-}
-
-.all-content{
-    margin: 0 auto;
 }
 
 .task-container{
@@ -31,6 +29,11 @@
     width: 350px;
 }
 
+.task-container .task-input:focus{
+    border: 1px solid var(--light-green);
+    box-shadow: 3px 3px 10px var(--light-green);
+}
+
 .error{
     border: 1px solid var(--danger-red);
 }
@@ -39,17 +42,14 @@
     color: var(--danger-red);
 }
 
-.task-container .task-button{
-    padding-left: 0;
-    width: 150px;
-}
-
 .task-button{
     background-color: var(--light-green);
     border: 0;
+    border-radius: var(--border-style);
+    color: var(--bg-white);
     cursor: pointer;
-    border-radius: .25em;
-    color: #FFF;
+    padding-left: 0;
+    width: 150px;
 }
 
 .task-button:hover{
@@ -63,7 +63,7 @@
 
 .tasks-todo .task-content{
     border: 1px solid var(--light-green);
-    border-radius: .25rem;
+    border-radius: var(--border-style);
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -73,8 +73,8 @@
 
 .icons-box .fa-trash-can, .fa-check{
     background-color: var(--danger-red);
-    border-radius: .25rem;
-    color: white;
+    border-radius: var(--border-style);
+    color: var(--bg-white);
     cursor: pointer;
     padding: 10px;
 }
@@ -82,11 +82,6 @@
 .icons-box .fa-check{
     background-color: var(--light-green);
     margin-right: 10px;
-}
-
-.task-container .task-input:focus{
-    border: 1px solid var(--light-green);
-    box-shadow: 3px 3px 10px var(--light-green);
 }
 
 .completed{

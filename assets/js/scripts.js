@@ -46,10 +46,23 @@ const addTask = () => {
     taskInput.value = "";
 };
 
+const taskDone = (taskContent, taskParagraph) => {
+    const tasks = taskContent.childNodes;
+    
+    for(const task of tasks){
+        const currentTaskIsBeingClicked = task.firstChild.isSameNode(taskParagraph);
+
+        if(currentTaskIsBeingClicked){
+            task.firstChild.classList.toggle("completed");
+        }
+    };
+}
+
 const deleteTask = (taskContent, taskParagraph) => {
     const tasks = taskContent.childNodes;
 
     for(const task of tasks){
+        console.log(task.firstChild);
         const currentTaskIsBeingClicked = task.firstChild.isSameNode(taskParagraph);
 
         if(currentTaskIsBeingClicked){
@@ -57,19 +70,6 @@ const deleteTask = (taskContent, taskParagraph) => {
         }
     }
 };
-
-const taskDone = (taskContent, taskParagraph) => {
-    const tasks = taskContent.childNodes;
-    
-    for(const task of tasks){
-        const currentTaskIsBeingClicked = task.firstChild.isSameNode(taskParagraph);
-        console.log(true);
-
-        if(currentTaskIsBeingClicked){
-            task.firstChild.classList.toggle("completed");
-        }
-    };
-}
 
 const inputColorChange = () => {
     const inputIsValid = validateInput();
@@ -81,4 +81,3 @@ const inputColorChange = () => {
 
 taskButton.addEventListener('click', () => addTask());
 taskInput.addEventListener('change', () => inputColorChange());
-

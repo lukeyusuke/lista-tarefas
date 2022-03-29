@@ -22,7 +22,7 @@
 
 - Conclusão de uma tarefa, onde ao clicar no ícone de "Concluído" o texto da tarefa fica sublinhado e transparente;
 
-- Deleção de uma tarefa, onde ao clicarno ícone de "Deletar" o conteúdo é removido da página
+- Deleção de uma tarefa, onde ao clicar no ícone de "Deletar" o conteúdo é removido da página
 <br/>
 
 <div align="center">

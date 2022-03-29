@@ -37,8 +37,7 @@
 </br>
 
 <h2 id="acesso"> 🌐 Maneira de acesso </h2>
-<p> Em andamento... </p>
-<br/>
+<p> É possível acessar o projeto através do link:<a href="https://lukeyusuke.github.io/lista-tarefas/"> https://lukeyusuke.github.io/lista-tarefas/ </p>
 
 <h2 id="autor"> 👦🏾 Autor </h2>
 <div>

@@ -23,7 +23,11 @@
 - Conclusão de uma tarefa, onde ao clicar no ícone de "Concluído" o texto da tarefa fica sublinhado e transparente;
 
 - Deleção de uma tarefa, onde ao clicarno ícone de "Deletar" o conteúdo é removido da página
+<br/>
 
+<div align="center">
+    <img src="./assets/img/img-projeto.png">
+</div>
 <br/>
 
 <h2 id="softwares"> 💻 Tecnologias utilizadas </h2>
